@@ -15,7 +15,28 @@
 #
 def triangle(a, b, c)
   # WRITE THIS CODE
+
+  results = 0
+  results += 1 if a == b
+  results += 1 if a == c 	
+  results += 1 if b == c
+ 
+  case results
+  when 0
+  	:scalene
+  when 1
+  	:isosceles
+  else
+  	:equilateral
+  end
+
 end
+
+# After I read their solutions...I really need to re-examine the problem possibility
+# and different method Ruby has
+# most impressive is the array.uniq.length
+# http://stackoverflow.com/questions/4742692/a-more-elegant-solution-to-ruby-koans-triangle-rb
+
 
 # Error class used in part 2.  No need to change this code.
 class TriangleError < StandardError
