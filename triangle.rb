@@ -15,20 +15,34 @@
 #
 def triangle(a, b, c)
   # WRITE THIS CODE
+  seq = [a,b,c].sort
 
-  results = 0
-  results += 1 if a == b
-  results += 1 if a == c 	
-  results += 1 if b == c
- 
-  case results
-  when 0
-  	:scalene
-  when 1
-  	:isosceles
+  raise TriangleError if seq[2] >= (seq[0] + seq[1]) || seq[0] <= 0
+  # almost miss the negative and zero case
+
+  case seq.uniq.length
+  when 3
+    :scalene
+  when 2
+    :isosceles
   else
-  	:equilateral
+    :equilateral
   end
+
+
+  # results = 0
+  # results += 1 if a == b
+  # results += 1 if a == c 	
+  # results += 1 if b == c
+ 
+  # case results
+  # when 0
+  # 	:scalene
+  # when 1
+  # 	:isosceles
+  # else
+  # 	:equilateral
+  # end
 
 end
 
